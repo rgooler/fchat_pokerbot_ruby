@@ -32,7 +32,8 @@ class Libfchat::Fchat
   
   # Respond to messages in chatrooms
   def got_MSG(message)
-    if message['message'].downcase == /^!deal'/
+    p "------"
+    if message['message'].downcase =~ /^!deal/
       msg = @deck.draw()
       self.send('MSG',message['channel'],msg)
       sleep(1)

@@ -24,7 +24,7 @@ class Deck
   def generate()
     @deck = Array.new()
     @num_decks.times { |i|
-      ['♠', '♣', '♥', '♦'].each do |suit|
+      ['♠', '♣', '[color=ff0000]♥[/color]', '[color=ff0000]♦[/color]'].each do |suit|
         %w{A 2 3 4 5 6 7 8 9 10 J Q K}.each do |rank|
           @deck << "#{rank}#{suit}"
         end
