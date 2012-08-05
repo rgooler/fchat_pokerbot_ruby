@@ -24,7 +24,7 @@ class Libfchat::Fchat
       self.send('PRI',message['character'],msg)
       sleep(1)
     else
-      msg = "Pokerbot 1.0 by Jippen Faddoul"
+      msg = "Pokerbot 1.0 by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )"
       self.send('PRI',message['character'],msg)
       sleep(1)
     end
