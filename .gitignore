@@ -19,3 +19,8 @@ doc/
 
 #Config file
 pokerbot.yaml
+
+#Other files
+libfchat
+pokerbot.err
+pokerbot.log
