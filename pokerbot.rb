@@ -24,7 +24,7 @@ class Libfchat::Fchat
       self.send('PRI',message['character'],msg)
       sleep(1)
     else
-      msg = "Pokerbot 1.0 by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )"
+      msg = "Pokerbot 1.1 by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )"
       self.send('PRI',message['character'],msg)
       sleep(1)
     end
@@ -34,14 +34,14 @@ class Libfchat::Fchat
   def got_MSG(message)
     p "------"
     if message['message'].downcase =~ /^!deal/
-      msg = @deck.draw()
+      msg = message['character'] + ": " + @deck.draw()
       self.send('MSG',message['channel'],msg)
       sleep(1)
     end
   end
 end
 
-bot = Libfchat::Fchat.new("Pokerbot by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )","1.0")
+bot = Libfchat::Fchat.new("Pokerbot by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )","1.1")
 config = YAML.load_file('pokerbot.yaml')
 
 bot.deck = Deck.new()
