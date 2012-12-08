@@ -24,7 +24,7 @@ class Libfchat::Fchat
       self.send('PRI',message['character'],msg)
       sleep(1)
     else
-      msg = "Pokerbot 1.1 by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )"
+      msg = "Pokerbot 1.2 by Jammer, based off code by Jippen Faddoul ( http://github.com/Jammer2omega/fchat_pokerbot_ruby )"
       self.send('PRI',message['character'],msg)
       sleep(1)
     end
@@ -41,7 +41,7 @@ class Libfchat::Fchat
   end
 end
 
-bot = Libfchat::Fchat.new("Pokerbot by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )","1.1")
+bot = Libfchat::Fchat.new("Pokerbot by Jammer ( http://github.com/Jammer2omega/fchat_pokerbot_ruby )","1.2")
 config = YAML.load_file('pokerbot.yaml')
 
 bot.deck = Deck.new()
