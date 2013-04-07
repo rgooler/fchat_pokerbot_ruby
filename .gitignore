@@ -24,3 +24,8 @@ pokerbot.yaml
 libfchat
 pokerbot.err
 pokerbot.log
+
+*.*~
+*~
+Gemfile.lock
+.*.swp

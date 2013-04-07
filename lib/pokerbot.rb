@@ -5,17 +5,9 @@ require 'libfchat/fchat'
 require 'yaml'
 require './deck.rb'
 
-class Libfchat::Fchat
+class Pokerbot < Libfchat::Fchat
   attr_accessor :deck
 
-  # Join chatrooms on invite
-  def got_CIU(message)
-    #Annoyingly, the json for this varies for public and private rooms.
-    #So just try both and call it a day.
-    self.send('JCH',message['name'])
-    self.send('JCH',message['channel'])
-  end
-  
   # Respond to private messages
   def got_PRI(message)
     if message['message'].downcase =~ /^!deal/
@@ -40,9 +32,3 @@ class Libfchat::Fchat
     end
   end
 end
-
-bot = Libfchat::Fchat.new("Pokerbot by Jippen Faddoul ( http://github.com/jippen/fchat_pokerbot_ruby )","1.1")
-config = YAML.load_file('pokerbot.yaml')
-
-bot.deck = Deck.new()
-bot.login(config['server'],config['username'],config['password'],config['character'])
