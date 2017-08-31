@@ -1,0 +1,7 @@
+#!/bin/bash
+docker run -d \
+-e FLIST_SERVER='ws://chat.f-list.net:9722' \ 
+-e FLIST_USER='username' \
+-e FLIST_PASS='password' \
+-e FLIST_CHARACTER='char_name' \
+--name pokerbot rgooler/fchat_pokerbot_ruby:latest

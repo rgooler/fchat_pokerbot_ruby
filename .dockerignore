@@ -1,0 +1,5 @@
+*.sh
+.*
+README.md
+*.example
+Dockerfile*

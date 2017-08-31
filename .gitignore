@@ -1,5 +1,6 @@
 *.gem
 *.rbc
+run.sh
 .bundle
 .config
 coverage

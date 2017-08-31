@@ -1,0 +1,10 @@
+FROM knjcode/rpi-ruby:2.4.1
+ADD . /src
+WORKDIR /src
+RUN apt-get update && \
+    apt-get install --no-install-recommends build-essential -y && \
+    gem install bundler && \
+    bundle install && \
+    apt-get remove --purge build-essential -y && \
+    rm -rf /var/lib/apt/lists/*
+CMD ["bundle", "exec", "rake", "runbot"]

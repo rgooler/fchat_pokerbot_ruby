@@ -10,4 +10,4 @@ bot = Pokerbot.new("Pokerbot by Jippen Faddoul ( http://github.com/jippen/fchat_
 config = YAML.load_file('pokerbot.yaml')
 
 bot.deck = Deck.new()
-bot.login(config['server'],config['username'],config['password'],config['character'])
+bot.login(ENV['FLIST_SERVER'],ENV['FLIST_USER'],ENV['FLIST_PASS'],ENV['FLIST_CHARACTER'])
